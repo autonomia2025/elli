@@ -1,7 +1,7 @@
 /**
  * Intersection Observer for scroll animations
  */
-document.addEventListener('DOMContentLoaded', () => {
+function initAnimations() {
     // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
@@ -36,4 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => {
         observer.observe(el);
     });
-});
+}
+
+// Run initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimations);
+} else {
+    initAnimations();
+}
