@@ -1,46 +1,252 @@
-/**
- * Intersection Observer for scroll animations
- */
-function initAnimations() {
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-        // If reduced motion is preferred, make all elements visible immediately
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            el.classList.add('is-visible');
-        });
-        return;
-    }
+export function init() {
+  // 1. Navbar Scroll Effect & Mobile Menu
+  const navbar = document.getElementById('navbar');
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
 
-    // Set up Intersection Observer
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -10% 0px', // Trigger slightly before element comes into view
-        threshold: 0.1
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // 2. Scroll Animation Observer (Staggered Fade-Up)
+  const animElements = document.querySelectorAll('.scroll-anim');
+  const animObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+  animElements.forEach(el => animObserver.observe(el));
+
+  // 3. Stats Counter
+  const counters = document.querySelectorAll('.counter');
+  const statObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const suffix = counter.getAttribute('data-suffix') || '';
+        
+        let startTime = null;
+        const duration = 2000;
+
+        const animate = (currentTime) => {
+          if (!startTime) startTime = currentTime;
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const currentVal = Math.floor(progress * target);
+          
+          counter.innerText = currentVal + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            counter.innerText = target + suffix;
+          }
+        };
+        requestAnimationFrame(animate);
+        observer.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => statObserver.observe(c));
+
+  // 4. 24-Hour Countdown Timer
+  const hhElem = document.getElementById('hh');
+  const mmElem = document.getElementById('mm');
+  const ssElem = document.getElementById('ss');
+  
+  if (hhElem && mmElem && ssElem) {
+    // Start of next day
+    const getNextMidnight = () => {
+      const d = new Date();
+      d.setHours(24, 0, 0, 0);
+      return d.getTime();
+    };
+    
+    const updateTime = () => {
+      const now = new Date().getTime();
+      const distance = getNextMidnight() - now;
+      
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      hhElem.innerText = h.toString().padStart(2, '0');
+      mmElem.innerText = m.toString().padStart(2, '0');
+      ssElem.innerText = s.toString().padStart(2, '0');
+    };
+    
+    updateTime();
+    setInterval(updateTime, 1000);
+  }
+
+  // 4.5. Services Carousel (Mobile)
+  const servicesGrid = document.getElementById('servicesGrid');
+  const servicesDots = document.querySelectorAll('.mc-dot');
+  
+  if (servicesGrid && servicesDots.length > 0) {
+    // Snap scroll listener
+    servicesGrid.addEventListener('scroll', () => {
+      const scrollLeft = servicesGrid.scrollLeft;
+      const cardWidth = servicesGrid.offsetWidth * 0.85; // approx the flex-basis width
+      const totalWidth = servicesGrid.scrollWidth - servicesGrid.clientWidth;
+      
+      let index = Math.round(scrollLeft / cardWidth);
+      if (scrollLeft >= totalWidth - 10) {
+        index = servicesDots.length - 1; // Last dot if scrolled to end
+      }
+      
+      servicesDots.forEach(d => d.classList.remove('active'));
+      if(servicesDots[index]) {
+        servicesDots[index].classList.add('active');
+      }
+    });
+
+    // Dot click listener
+    servicesDots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-index'));
+        const cardWidth = servicesGrid.offsetWidth * 0.85;
+        servicesGrid.scrollTo({
+          left: index * cardWidth,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  // 5. Testimonial Carousel
+  const track = document.querySelector('.car-track');
+  const slides = Array.from(track ? track.children : []);
+  const nextBtn = document.querySelector('.car-arrow.next');
+  const prevBtn = document.querySelector('.car-arrow.prev');
+  
+  if (track && slides.length > 0) {
+    let currentSlide = 0;
+    
+    const moveToSlide = (index) => {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      currentSlide = index;
+    };
+    
+    const nextFn = () => {
+      const target = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+      moveToSlide(target);
+    };
+    
+    const prevFn = () => {
+      const target = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+      moveToSlide(target);
+    };
+    
+    if (nextBtn) nextBtn.addEventListener('click', nextFn);
+    if (prevBtn) prevBtn.addEventListener('click', prevFn);
+    
+    setInterval(nextFn, 4000);
+  }
+
+  // 6. Before & After Slider
+  const baContainer = document.getElementById('baContainer');
+  if (baContainer) {
+    const dragText = document.getElementById('baDragText');
+    let interacted = false;
+
+    const handleSlider = (e) => {
+      if (!interacted) {
+        interacted = true;
+        if (dragText) dragText.style.opacity = '0';
+      }
+      const rect = baContainer.getBoundingClientRect();
+      let x = e.clientX || (e.touches && e.touches[0].clientX);
+      if (x === undefined) return;
+      let pos = ((x - rect.left) / rect.width) * 100;
+      pos = Math.max(0, Math.min(100, pos));
+      baContainer.style.setProperty('--pos', pos + '%');
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add class to trigger animation
-                entry.target.classList.add('is-visible');
-                // Unobserve after animation is triggered
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    let isDragging = false;
+    baContainer.addEventListener('mousedown', (e) => { isDragging = true; handleSlider(e); });
+    window.addEventListener('mouseup', () => isDragging = false);
+    window.addEventListener('mousemove', (e) => { if (isDragging) handleSlider(e); });
 
-    // Observe all elements with the animate-on-scroll class
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => {
-        observer.observe(el);
+    baContainer.addEventListener('touchstart', (e) => { isDragging = true; handleSlider(e); }, {passive: true});
+    window.addEventListener('touchend', () => isDragging = false);
+    window.addEventListener('touchmove', (e) => { if (isDragging) handleSlider(e); }, {passive: true});
+
+    // Auto-animation on scroll
+    let animationDone = false;
+    const baObserver = new IntersectionObserver((entries) => {
+      if(entries[0].isIntersecting && !animationDone && !interacted) {
+        animationDone = true;
+        let frame = 0;
+        const frames = 90; // 1.5 seconds duration
+        function animate() {
+          if (interacted || isDragging) return;
+          frame++;
+          const progress = frame / frames;
+          const offset = Math.sin(progress * Math.PI) * 20; // Swing 20% left
+          baContainer.style.setProperty('--pos', (50 - offset) + '%');
+          
+          if(frame < frames) {
+            requestAnimationFrame(animate);
+          } else {
+            setTimeout(() => {
+              if(!interacted && dragText) dragText.style.opacity = '0';
+            }, 1000);
+          }
+        }
+        setTimeout(() => requestAnimationFrame(animate), 500);
+      }
+    }, { threshold: 0.5 });
+    baObserver.observe(baContainer);
+  }
+
+  // 7. FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    const ans = item.querySelector('.faq-a');
+    
+    btn.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all
+      faqItems.forEach(fi => {
+        fi.classList.remove('active');
+        fi.querySelector('.faq-a').style.maxHeight = null;
+      });
+      
+      if (!isActive) {
+        item.classList.add('active');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
     });
+  });
+
+  // 8. Floating WhatsApp Button Delay
+  const waContainer = document.getElementById('waFloat');
+  if (waContainer) {
+    setTimeout(() => {
+      waContainer.classList.add('show');
+    }, 2000);
+  }
 }
 
-// Run initialization
+// Ensure execution when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAnimations);
+    document.addEventListener('DOMContentLoaded', init);
 } else {
-    initAnimations();
+    init();
 }

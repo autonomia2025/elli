@@ -1,260 +1,372 @@
 <!DOCTYPE html>
 <html lang="es-CL">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO & Open Graph -->
-    <title>Elizabeth Estética y Belleza | Depilación y Masajes en Franklin, Santiago</title>
-    <meta name="description" content="Estética profesional unisex en Mall Caracol Franklin. Depilación, masajes y limpieza facial. Primera visita con 15% de descuento. Agenda por WhatsApp.">
-    
-    <meta property="og:title" content="Elizabeth Estética y Belleza | Depilación y Masajes en Franklin, Santiago">
-    <meta property="og:description" content="Estética profesional unisex en Mall Caracol Franklin. Depilación, masajes y limpieza facial. Primera visita con 15% de descuento. Agenda por WhatsApp.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_CL">
-    <meta property="og:url" content="https://elizabethestetica.cl/">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1200&q=80">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elizabeth Estética y Belleza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="#inicio" class="navbar-brand">Elizabeth</a>
-            <ul class="navbar-menu">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
-            </ul>
-            <a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" class="btn-nav">
-                Agendar Cita
-            </a>
+<a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" class="promo-banner">
+  <div class="marquee">
+    <span>✨ Primera visita con 15% de descuento &middot; Solo por tiempo limitado &middot; Agenda ahora por WhatsApp &middot; ✨ Primera visita con 15% de descuento &middot; Solo por tiempo limitado &middot; Agenda ahora por WhatsApp &middot; ✨ Primera visita con 15% de descuento &middot; Solo por tiempo limitado &middot; Agenda ahora por WhatsApp &middot; </span>
+    <span>✨ Primera visita con 15% de descuento &middot; Solo por tiempo limitado &middot; Agenda ahora por WhatsApp &middot; ✨ Primera visita con 15% de descuento &middot; Solo por tiempo limitado &middot; Agenda ahora por WhatsApp &middot; ✨ Primera visita con 15% de descuento &middot; Solo por tiempo limitado &middot; Agenda ahora por WhatsApp &middot; </span>
+  </div>
+</a>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#inicio" class="logo">Elizabeth</a>
+    <button class="menu-btn" aria-label="Menú">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+    </ul>
+    <a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" class="btn btn-gold nav-cta">Agendar Cita</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="particles"></div>
+  <div class="hero-content">
+    <h1 class="logo-large scroll-anim">Elizabeth</h1>
+    <h2 class="hero-sub scroll-anim delay-1">ESTÉTICA Y BELLEZA · SANTIAGO, CHILE</h2>
+    <p class="hero-desc scroll-anim delay-2">Depilación, masajes y limpieza facial profesional para hombres y mujeres. En el Mall Caracol Franklin, a pasos del metro Franklin.</p>
+    <div class="hero-cta scroll-anim delay-3">
+      <a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" class="btn btn-gold btn-large wa-icon-btn">Agendar por WhatsApp</a>
+      <p class="promo-text pulse">✨ Primera visita con 15% de descuento</p>
+    </div>
+  </div>
+  <svg class="wave-bottom" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="var(--c-cream)" d="M0,60 C320,120 420,-60 1440,60 L1440,120 L0,120 Z"></path></svg>
+</header>
+
+<section class="stats" id="estadisticas">
+  <div class="stats-grid">
+    <div class="stat-box scroll-anim"><h3 class="counter" data-target="100" data-suffix="+">0</h3><p>Clientes atendidos</p></div>
+    <div class="stat-box scroll-anim delay-1"><h3 class="counter" data-target="6" data-suffix="">0</h3><p>Servicios disponibles</p></div>
+    <div class="stat-box scroll-anim delay-2"><h3 class="counter" data-target="15" data-suffix="%">0</h3><p>Descuento primera visita</p></div>
+    <div class="stat-box scroll-anim delay-3"><h3 class="counter" data-target="2" data-suffix=" min">0</h3><p>Del metro Franklin</p></div>
+  </div>
+</section>
+
+<section class="process" id="proceso">
+  <h2 class="section-title script-title green scroll-anim">Así de fácil es comenzar</h2>
+  <div class="process-wrapper scroll-anim">
+    <div class="process-line"></div>
+    <div class="process-grid">
+      <div class="step scroll-anim delay-1">
+        <div class="step-num">1</div>
+        <div class="step-icon">📱</div>
+        <h4 class="green">Agenda por WhatsApp</h4>
+        <p>Escríbenos al +56 9 3346 0325 y te confirmamos hora al instante.</p>
+      </div>
+      <div class="step scroll-anim delay-2">
+        <div class="step-num">2</div>
+        <div class="step-icon">📍</div>
+        <h4 class="green">Ven al local</h4>
+        <p>Nos encuentras en Mall Caracol Franklin, Local 218, Piso 2. A 2 minutos del metro.</p>
+      </div>
+      <div class="step scroll-anim delay-3">
+        <div class="step-num">3</div>
+        <div class="step-icon">🫶</div>
+        <h4 class="green">Disfruta tu tratamiento</h4>
+        <p>Relájate mientras nuestras profesionales se encargan de todo con productos de calidad.</p>
+      </div>
+      <div class="step scroll-anim delay-4">
+        <div class="step-num">4</div>
+        <div class="step-icon">⭐</div>
+        <h4 class="green">Luce increíble</h4>
+        <p>Sale sintiéndote renovada y con tu piel perfecta. Primera vez con 15% de descuento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <h2 class="section-title script-title green scroll-anim">Nuestros Servicios</h2>
+  <h3 class="subtitle gold scroll-anim">LO MEJOR PARA TI</h3>
+  <div class="services-wrapper">
+    <div class="services-grid" id="servicesGrid">
+      <div class="service-item scroll-anim">
+        <div class="flip-card desktop-flip"><div class="flip-inner">
+          <div class="flip-front" style="background-image: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600')"><h4>Depilación Corporal</h4></div>
+          <div class="flip-back"><h4>Depilación Corporal</h4><p>Cera caliente de alta calidad. Menos dolor, mayor duración. Para hombres y mujeres, incluyendo zonas con tatuajes.</p><a href="https://wa.me/56933460325" target="_blank" class="btn btn-wa-sm">Consultar</a></div>
+        </div></div>
+        <div class="mobile-card">
+          <div class="mc-img" style="background-image: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600')"></div>
+          <div class="mc-content">
+            <div class="mc-emoji">🍯</div>
+            <h4>Depilación Corporal</h4>
+            <p>Cera caliente de alta calidad. Menos dolor, mayor duración. Para hombres y mujeres.</p>
+            <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-block wa-icon-btn">Agendar por WhatsApp</a>
+          </div>
         </div>
-    </nav>
-
-    <!-- SECTION 1: HERO -->
-    <section class="hero" id="inicio">
-        <div class="hero-texture"></div>
-        <div class="hero-decoration">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0,100 Q50,0 100,100" fill="none" stroke="white" stroke-width="0.5" />
-                <path d="M10,90 Q40,10 90,90" fill="none" stroke="white" stroke-width="0.3" />
-            </svg>
+      </div>
+      <div class="service-item scroll-anim">
+        <div class="flip-card desktop-flip"><div class="flip-inner">
+          <div class="flip-front" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600')"><h4>Limpieza Facial Profunda</h4></div>
+          <div class="flip-back"><h4>Limpieza Facial Profunda</h4><p>Extracción profunda de poros con equipos profesionales y lámpara de aumento. Piel luminosa desde la primera sesión.</p><a href="https://wa.me/56933460325" target="_blank" class="btn btn-wa-sm">Consultar</a></div>
+        </div></div>
+        <div class="mobile-card">
+          <div class="mc-img" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600')"></div>
+          <div class="mc-content">
+            <div class="mc-emoji">✨</div>
+            <h4>Limpieza Facial Profunda</h4>
+            <p>Extracción profunda de poros con profesionales y lámpara de aumento. Piel luminosa.</p>
+            <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-block wa-icon-btn">Agendar por WhatsApp</a>
+          </div>
         </div>
-        <div class="container hero-content animate-on-scroll">
-            <h1 class="script-title">Elizabeth</h1>
-            <h2 class="hero-subtitle">Estética y Belleza &middot; Santiago, Chile</h2>
-            <p class="hero-text">Depilación, masajes y limpieza facial profesional para hombres y mujeres. Ubicados en el Mall Caracol Franklin, a pasos del metro Franklin.</p>
-            <a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                Agendar por WhatsApp
-            </a>
-            <p class="hero-discount">✨ Primera visita con 15% de descuento</p>
+      </div>
+      <div class="service-item scroll-anim">
+        <div class="flip-card desktop-flip"><div class="flip-inner">
+          <div class="flip-front" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600')"><h4>Masajes</h4></div>
+          <div class="flip-back"><h4>Masajes</h4><p>Relajantes, descontracturantes y reductores. Alivia tensiones y activa la circulación de forma profunda.</p><a href="https://wa.me/56933460325" target="_blank" class="btn btn-wa-sm">Consultar</a></div>
+        </div></div>
+        <div class="mobile-card">
+          <div class="mc-img" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600')"></div>
+          <div class="mc-content">
+            <div class="mc-emoji">💆‍♀️</div>
+            <h4>Masajes</h4>
+            <p>Relajantes, descontracturantes y reductores. Alivia tensiones y activa la circulación.</p>
+            <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-block wa-icon-btn">Agendar por WhatsApp</a>
+          </div>
         </div>
-    </section>
-
-    <!-- SECTION 2: SERVICIOS -->
-    <section class="services" id="servicios">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <p class="section-subtitle">Todo lo que necesitas en un solo lugar</p>
-            </div>
-            
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <article class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" alt="Depilación Corporal" loading="lazy">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" /></svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Depilación Corporal</h3>
-                        <p>Con cera caliente de alta calidad. Menos dolor, mayor duración. Para hombres y mujeres, incluyendo zonas con tatuajes.</p>
-                    </div>
-                </article>
-
-                <!-- Service 2 -->
-                <article class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Limpieza Facial Profunda" loading="lazy">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z" /></svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Limpieza Facial Profunda</h3>
-                        <p>Extracción profunda de poros con equipos profesionales y lámpara de aumento. Piel luminosa desde la primera sesión.</p>
-                    </div>
-                </article>
-
-                <!-- Service 3 -->
-                <article class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Masajes" loading="lazy">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M15.6,18.4L14,15.4L15.4,14L18.4,15.6L15.6,18.4M19.4,11L18,10V7L21,10L19.4,11M16.5,5.5L19.5,8.5L18.5,9.5L15.5,6.5L16.5,5.5M13,4.6L14,3.2L17,4.2L15.6,5.6L13,4.6Z" /></svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Masajes</h3>
-                        <p>Masajes relajantes, descontracturantes y reductores/modeladores. Alivia tensiones y activa la circulación.</p>
-                    </div>
-                </article>
-
-                <!-- Service 4 -->
-                <article class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600&q=80" alt="Manicura" loading="lazy">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24"><path d="M2,18V15L3,13.5L2,12V9L3,7.5L2,6V3H22V6L21,7.5L22,9V12L21,13.5L22,15V18H2V18Z" /></svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Manicura</h3>
-                        <p>Manicura prolija y duradera para que tus manos siempre luzcan impecables y elegantes en todo momento.</p>
-                    </div>
-                </article>
-
-                <!-- Service 5 -->
-                <article class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Fototerapia Luz Roja" loading="lazy">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z" /></svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Fototerapia Luz Roja</h3>
-                        <p>Tratamiento facial con luz roja para estimular el colágeno y mejorar la textura de la piel de forma no invasiva.</p>
-                    </div>
-                </article>
-
-                <!-- Service 6 -->
-                <article class="service-card animate-on-scroll">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Paquetes Combinados" loading="lazy">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24"><path d="M20,6H16V4L14,2H10L8,4V6H4C2.89,6 2,6.89 2,8V19C2,20.11 2.89,21 4,21H20C21.11,21 22,20.11 22,19V8C22,6.89 21.11,6 20,6M10,4H14V6H10V4Z" /></svg>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Paquetes Combinados</h3>
-                        <p>Combina servicios y ahorra. Paquete Rebaje + Piernas disponible. Consulta combos especiales por WhatsApp.</p>
-                    </div>
-                </article>
-            </div>
+      </div>
+      <div class="service-item scroll-anim">
+        <div class="flip-card desktop-flip"><div class="flip-inner">
+          <div class="flip-front" style="background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600')"><h4>Manicura</h4></div>
+          <div class="flip-back"><h4>Manicura</h4><p>Prolija y duradera para que tus manos luzcan impecables en cada detalle y ocasión.</p><a href="https://wa.me/56933460325" target="_blank" class="btn btn-wa-sm">Consultar</a></div>
+        </div></div>
+        <div class="mobile-card">
+          <div class="mc-img" style="background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600')"></div>
+          <div class="mc-content">
+            <div class="mc-emoji">💅</div>
+            <h4>Manicura</h4>
+            <p>Prolija y duradera para que tus manos luzcan impecables en cada detalle y ocasión.</p>
+            <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-block wa-icon-btn">Agendar por WhatsApp</a>
+          </div>
         </div>
-    </section>
-
-    <!-- SECTION 3: OFERTA DESTACADA -->
-    <section class="offer" id="oferta">
-        <div class="container offer-content animate-on-scroll">
-            <h2 class="script-title text-cream">Primera visita</h2>
-            <div class="offer-highlight">15% OFF</div>
-            <p class="offer-text">Válido para cualquier servicio en tu primera visita a nuestro local.</p>
-            <a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                Agendar ahora por WhatsApp
-            </a>
+      </div>
+      <div class="service-item scroll-anim">
+        <div class="flip-card desktop-flip"><div class="flip-inner">
+          <div class="flip-front" style="background-image: url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600')"><h4>Fototerapia Luz Roja</h4></div>
+          <div class="flip-back"><h4>Fototerapia Luz Roja</h4><p>Estimula el colágeno y mejora la textura de la piel de forma no invasiva con tecnología profesional.</p><a href="https://wa.me/56933460325" target="_blank" class="btn btn-wa-sm">Consultar</a></div>
+        </div></div>
+        <div class="mobile-card">
+          <div class="mc-img" style="background-image: url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600')"></div>
+          <div class="mc-content">
+            <div class="mc-emoji">🔴</div>
+            <h4>Fototerapia Luz Roja</h4>
+            <p>Estimula el colágeno y mejora la textura de la piel de forma no invasiva.</p>
+            <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-block wa-icon-btn">Agendar por WhatsApp</a>
+          </div>
         </div>
-    </section>
-
-    <!-- SECTION 4: POR QUÉ ELEGIRNOS -->
-    <section class="why-us" id="nosotros">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">¿Por qué elegir Elizabeth?</h2>
-            <div class="features-grid">
-                <div class="feature-item animate-on-scroll">
-                    <div class="feature-icon">🌿</div>
-                    <h3>Experiencia real</h3>
-                    <p>Años de trayectoria en estética y bienestar con técnicas actualizadas.</p>
-                </div>
-                <div class="feature-item animate-on-scroll" style="transition-delay: 0.1s;">
-                    <div class="feature-icon">💚</div>
-                    <h3>Servicio unisex</h3>
-                    <p>Atendemos hombres y mujeres sin distinción. Todos merecen sentirse bien.</p>
-                </div>
-                <div class="feature-item animate-on-scroll" style="transition-delay: 0.2s;">
-                    <div class="feature-icon">📍</div>
-                    <h3>Ubicación privilegiada</h3>
-                    <p>En el corazón de Franklin, con acceso fácil en metro y locomoción.</p>
-                </div>
-                <div class="feature-item animate-on-scroll" style="transition-delay: 0.3s;">
-                    <div class="feature-icon">🇻🇪</div>
-                    <h3>Calidez venezolana</h3>
-                    <p>Un trato cercano, cálido y profesional en cada visita.</p>
-                </div>
-            </div>
+      </div>
+      <div class="service-item scroll-anim">
+        <div class="flip-card desktop-flip"><div class="flip-inner">
+          <div class="flip-front" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600')"><h4>Paquetes Combinados</h4></div>
+          <div class="flip-back"><h4>Paquetes Combinados</h4><p>Combina servicios y ahorra. Paquete Rebaje + Piernas desde $25.000 CLP. Consulta combos por WhatsApp.</p><a href="https://wa.me/56933460325" target="_blank" class="btn btn-wa-sm">Consultar</a></div>
+        </div></div>
+        <div class="mobile-card">
+          <div class="mc-img" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600')"></div>
+          <div class="mc-content">
+            <div class="mc-emoji">🎁</div>
+            <h4>Paquetes Combinados</h4>
+            <p>Combina y ahorra. Paquete Rebaje + Piernas desde $25.000 CLP. Consulta opciones.</p>
+            <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-block wa-icon-btn">Agendar por WhatsApp</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="mc-dots" id="servicesDots">
+      <button class="mc-dot active" data-index="0" aria-label="Servicio 1"></button>
+      <button class="mc-dot" data-index="1" aria-label="Servicio 2"></button>
+      <button class="mc-dot" data-index="2" aria-label="Servicio 3"></button>
+      <button class="mc-dot" data-index="3" aria-label="Servicio 4"></button>
+      <button class="mc-dot" data-index="4" aria-label="Servicio 5"></button>
+      <button class="mc-dot" data-index="5" aria-label="Servicio 6"></button>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION 5: CÓMO LLEGAR -->
-    <section class="location" id="ubicacion">
-        <div class="container">
-            <div class="location-content animate-on-scroll">
-                <h2 class="section-title">Encuéntranos</h2>
-                <p class="address-highlight">Calle San Diego 2080, Mall Caracol Franklin, Local 218, Piso 2, Santiago</p>
-                <p class="address-support">A 2 minutos del Metro Franklin (Línea 2). Entrada por Calle San Diego.</p>
-                
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.388835471431!2d-70.6517173!3d-33.4730626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5100b213b2f%3A0x8673b53c301d2938!2sSan%20Diego%202080%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación Elizabeth Estética y Belleza"></iframe>
-                </div>
-                
-                <a href="https://maps.google.com/?q=San+Diego+2080,+Santiago,+Chile" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    Ver en Google Maps
-                </a>
-            </div>
-        </div>
-    </section>
+<section class="ba-section" id="resultados">
+  <div class="ba-header center scroll-anim">
+    <h2 class="section-title script-title green">Los resultados hablan</h2>
+    <h3 class="subtitle gold">ARRASTRA PARA VER LA DIFERENCIA</h3>
+  </div>
+  <div class="ba-container scroll-anim" id="baContainer">
+    <!-- DESPUÉS -->
+    <img class="ba-img ba-after" src="/imagen_2026-04-18_00_51_07.png" alt="Después de limpieza facial" />
+    
+    <div class="ba-before-wrapper">
+      <!-- ANTES -->
+      <img class="ba-img ba-before" src="/imagen_2026-04-18_00_50_55.png" alt="Antes de limpieza facial" />
+    </div>
+    
+    <div class="ba-handle" id="baHandle">
+      <div class="ba-drag-text" id="baDragText">ARRASTRA</div>
+      <div class="ba-label-float ba-label-before">ANTES</div>
+      <div class="ba-handle-circle">
+        <span class="ba-arrow" style="color: var(--c-green-dark);">&#9664;</span>
+        <span class="ba-arrow" style="color: var(--c-gold);">&#9654;</span>
+      </div>
+      <div class="ba-label-float ba-label-after">DESPUÉS</div>
+    </div>
+  </div>
+  <div class="ba-footer center scroll-anim">
+    <p>La diferencia que mereces sentir.<br>Agenda tu cita hoy.</p>
+    <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold wa-icon-btn">Agendar por WhatsApp</a>
+  </div>
+</section>
 
-    <!-- SECTION 6: CTA FINAL -->
-    <section class="final-cta" id="contacto">
-        <div class="container final-cta-content animate-on-scroll">
-            <h2 class="script-title text-cream">Elizabeth</h2>
-            <p class="final-text">¿Lista para sentirte bien? Agenda tu cita hoy.</p>
-            <a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" class="btn btn-gold-large">
-                Escribir por WhatsApp
-            </a>
-            <div class="contact-info">
-                <p class="phone">+56 9 3346 0325</p>
-                <a href="https://instagram.com/elizabethesteticaybelleza" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    @elizabethesteticaybelleza
-                </a>
-            </div>
-        </div>
-    </section>
+<section class="offer" id="oferta">
+  <div class="offer-container scroll-anim">
+    <h2 class="script-title cream">Primera visita</h2>
+    <h3 class="offer-huge gold">15% OFF</h3>
+    <p class="white">Válido para cualquier servicio en tu primera visita.</p>
+    <div class="urgency-text">
+      <span class="pulsing-dot"></span>
+      <p>Oferta válida por tiempo limitado · ¡Últimos cupos del día!</p>
+    </div>
+    <a href="https://wa.me/56933460325" target="_blank" class="btn btn-cream green wa-icon-btn">Agendar ahora por WhatsApp</a>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p class="footer-brand">Elizabeth Estética y Belleza</p>
-            <p>Mall Caracol Franklin, Local 218, Piso 2 &middot; Santiago, Chile</p>
-            <p>WhatsApp +56 9 3346 0325</p>
-            <p>Instagram @elizabethesteticaybelleza</p>
-            <p class="copyright">&copy; 2025 Elizabeth Estética y Belleza. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<section class="why-us" id="nosotros">
+  <h2 class="section-title script-title green scroll-anim">¿Por qué elegirnos?</h2>
+  <div class="features-grid">
+    <div class="feat-card scroll-anim"><div class="emoji">🌿</div><h4 class="green">Experiencia real</h4><p>Años de trayectoria en estética y bienestar con técnicas actualizadas.</p></div>
+    <div class="feat-card scroll-anim delay-1"><div class="emoji">💚</div><h4 class="green">Servicio unisex</h4><p>Atendemos hombres y mujeres sin distinción. Todos merecen sentirse bien.</p></div>
+    <div class="feat-card scroll-anim delay-2"><div class="emoji">📍</div><h4 class="green">Ubicación privilegiada</h4><p>En el corazón de Franklin, con acceso fácil en metro y locomoción.</p></div>
+    <div class="feat-card scroll-anim delay-3"><div class="emoji">🇻🇪</div><h4 class="green">Calidez venezolana</h4><p>Un trato cercano, cálido y profesional garantizado en cada visita.</p></div>
+  </div>
+</section>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chatear por WhatsApp">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </a>
+<section class="testimonials" id="testimonios">
+  <div class="carousel scroll-anim">
+    <button class="car-arrow prev">&#10094;</button>
+    <div class="car-track-container">
+      <ul class="car-track">
+        <li class="car-slide">
+          <div class="quote">&ldquo;</div>
+          <p class="car-text">Excelente servicio, quedé encantada con mi depilación. El local muy limpio y Elizabeth muy profesional. 100% recomendada.</p>
+          <p class="car-author">— María G., clienta frecuente</p>
+        </li>
+        <li class="car-slide">
+          <div class="quote">&ldquo;</div>
+          <p class="car-text">Primera vez que me depilo en un lugar así de bueno. El ambiente es súper cómodo y el precio muy justo. Ya agendé para el próximo mes.</p>
+          <p class="car-author">— Carlos R., cliente nuevo</p>
+        </li>
+        <li class="car-slide">
+          <div class="quote">&ldquo;</div>
+          <p class="car-text">La limpieza facial me dejó la piel increíble. Se nota que usan buenos productos y tienen experiencia real. Volvería mil veces.</p>
+          <p class="car-author">— Valentina M., clienta recurrente</p>
+        </li>
+      </ul>
+    </div>
+    <button class="car-arrow next">&#10095;</button>
+  </div>
+</section>
 
-    <script type="module" src="/script.js"></script>
+<section class="faq" id="preguntas">
+  <div class="center scroll-anim">
+    <h2 class="section-title script-title green">Preguntas frecuentes</h2>
+    <h3 class="subtitle gold">TODO LO QUE NECESITAS SABER</h3>
+  </div>
+  <div class="faq-list scroll-anim">
+    <div class="faq-item">
+      <button class="faq-q">¿Atienden hombres también?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-content">Sí, somos un servicio 100% unisex. Atendemos hombres y mujeres en todos nuestros servicios incluyendo depilación corporal, masajes y limpieza facial.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Cómo agendo una cita?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-content">Es muy fácil. Solo escríbenos por WhatsApp al +56 9 3346 0325 y te confirmamos disponibilidad al instante. También puedes hacer clic en cualquier botón de esta página.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Cuánto dura el efecto de la depilación con cera?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-content">El resultado dura entre 3 y 6 semanas dependiendo del tipo de piel y zona tratada. Con el tiempo y las sesiones regulares el vello crece más fino y escaso.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Qué debo hacer antes de venir a depilarme?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-content">El vello debe tener al menos 0.5 cm de largo. Evita aplicar cremas o aceites el día de la cita. Si es zona sensible puedes tomar un analgésico suave 30 minutos antes.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿El descuento del 15% aplica a todos los servicios?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-content">Sí, el 15% de descuento en la primera visita aplica para cualquier servicio: depilación, masajes, limpieza facial, manicura y fototerapia.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Dónde están ubicados exactamente?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-content">Estamos en Calle San Diego 2080, Mall Caracol Franklin, Local 218, Piso 2, Santiago. A 2 minutos caminando del Metro Franklin, Línea 2. Entrada por Calle San Diego.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Tienen estacionamiento?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-content">El mall cuenta con acceso de estacionamiento. También es muy conveniente llegar en metro ya que estamos a 2 minutos de la estación Franklin.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="location cream-bg" id="ubicacion">
+  <div class="section-header center scroll-anim">
+    <h2 class="section-title script-title green">Encuéntranos</h2>
+  </div>
+  <div class="loc-split scroll-anim">
+    <div class="loc-image-map">
+      <div class="loc-overlay"></div>
+      <div class="loc-pin pulse-wa">📍</div>
+    </div>
+    <div class="loc-card">
+      <div class="loc-card-pin">📍</div>
+      <h3 class="green">Cómo llegar</h3>
+      <p class="address-main">Mall Caracol Franklin, Local 218, Piso 2</p>
+      <p class="address-sec">Calle San Diego 2080, Santiago</p>
+      <hr class="gold-sep">
+      <div class="loc-row">
+        <span class="loc-icon">🚇</span>
+        <p>Metro Franklin, Línea 2 &middot; 2 minutos caminando</p>
+      </div>
+      <div class="loc-row">
+        <span class="loc-icon">🕒</span>
+        <p>Lunes a Sábado: 10:00 - 19:30 hrs</p>
+      </div>
+      <hr class="gold-sep">
+      <div class="loc-btns">
+        <a href="https://maps.google.com/?q=San+Diego+2080,+Santiago,+Chile" target="_blank" class="btn btn-outline btn-block">Abrir en Google Maps</a>
+        <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-block wa-icon-btn">Agendar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta animated-grad" id="contacto">
+  <div class="final-content scroll-anim">
+    <h2 class="logo-large cream">Elizabeth</h2>
+    <p class="cream">¿Lista para sentirte bien? Agenda tu cita hoy.</p>
+    <a href="https://wa.me/56933460325" target="_blank" class="btn btn-gold btn-large wa-icon-btn">Escribir por WhatsApp</a>
+    <a href="tel:+56933460325" class="phone gold">+56 9 3346 0325</a>
+    <a href="https://instagram.com/elizabethesteticaybelleza" target="_blank" class="insta gold">@elizabethesteticaybelleza</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <h3 class="logo-small white">Elizabeth</h3>
+    <p>Mall Caracol Franklin, Local 218, Piso 2 · Santiago, Chile</p>
+    <p>WhatsApp: +56 9 3346 0325</p>
+    <p>Instagram: @elizabethesteticaybelleza</p>
+    <p class="copy">© 2026 Elizabeth Estética y Belleza. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<div class="wa-float-container" id="waFloat">
+  <span class="wa-tooltip">¡Chatea con nosotras!</span>
+  <a href="https://wa.me/56933460325" target="_blank" class="wa-float-btn pulse-wa"></a>
+</div>
+
+<script type="module" src="/script.js"></script>
 </body>
 </html>
