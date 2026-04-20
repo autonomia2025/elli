@@ -256,11 +256,7 @@ footer { background: var(--c-black); color: rgba(255,255,255,0.6); padding: 60px
   .nav-links a { color: var(--c-green-dark); font-size: 1.1rem; }
   .nav-cta { display: none; }
   
-  .process-grid { grid-template-columns: 1fr; gap: 50px; }
-  .process-line { display: block; top: 0; bottom: 0; left: 40px; right: auto; border-top: none; border-left: 2px dashed var(--c-gold); width: 2px; }
-  .step-icon { margin: 0 0 20px 0; }
-  .process-wrapper { text-align: left; }
-  .step-num { left: 40px; }
+  .process { display: none; }
   
   .services-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 15px; padding-bottom: 20px; margin: 0 -20px; padding: 0 20px 20px; scrollbar-width: none; scroll-behavior: smooth; }
   .services-grid::-webkit-scrollbar { display: none; }
