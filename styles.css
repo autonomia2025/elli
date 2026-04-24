@@ -336,8 +336,9 @@ footer { background: var(--c-black); color: rgba(255,255,255,0.6); padding: 60px
     padding: 0 20px 20px; 
     scrollbar-width: none; 
     scroll-behavior: smooth; 
-    touch-action: pan-y;
+    touch-action: pan-x pan-y;
     overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .services-grid::-webkit-scrollbar { display: none; }
   .service-item { flex: 0 0 85%; scroll-snap-align: center; perspective: none; height: auto; }

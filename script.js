@@ -97,34 +97,84 @@ export function init() {
   const servicesDots = document.querySelectorAll('.mc-dot');
   
   if (servicesGrid && servicesDots.length > 0) {
-    // Snap scroll listener
-    servicesGrid.addEventListener('scroll', () => {
+    let isAutoScrolling = true;
+    let autoScrollInterval;
+
+    const updateDots = () => {
       const scrollLeft = servicesGrid.scrollLeft;
-      const cardWidth = servicesGrid.offsetWidth * 0.85; // approx the flex-basis width
-      const totalWidth = servicesGrid.scrollWidth - servicesGrid.clientWidth;
+      const width = servicesGrid.offsetWidth;
+      const children = Array.from(servicesGrid.querySelectorAll('.service-item'));
       
-      let index = Math.round(scrollLeft / cardWidth);
-      if (scrollLeft >= totalWidth - 10) {
-        index = servicesDots.length - 1; // Last dot if scrolled to end
-      }
+      let closestIndex = 0;
+      let minDiff = Infinity;
+      const gridCenter = scrollLeft + width / 2;
       
-      servicesDots.forEach(d => d.classList.remove('active'));
-      if(servicesDots[index]) {
-        servicesDots[index].classList.add('active');
+      children.forEach((child, i) => {
+        // Position relative to the grid
+        const childCenter = (child.offsetLeft - servicesGrid.offsetLeft) + child.offsetWidth / 2;
+        const diff = Math.abs(gridCenter - childCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIndex = i;
+        }
+      });
+
+      servicesDots.forEach((d, i) => {
+        d.classList.toggle('active', i === closestIndex);
+      });
+      return closestIndex;
+    };
+
+    // Use a debounced or throttled scroll listener for performance if needed, 
+    // but for dots, simple listener is usually fine.
+    servicesGrid.addEventListener('scroll', updateDots);
+
+    const scrollToService = (index) => {
+      const children = Array.from(servicesGrid.querySelectorAll('.service-item'));
+      const child = children[index];
+      if (child) {
+        const targetLeft = (child.offsetLeft - servicesGrid.offsetLeft) - (servicesGrid.offsetWidth - child.offsetWidth) / 2;
+        servicesGrid.scrollTo({
+          left: targetLeft,
+          behavior: 'smooth'
+        });
       }
-    });
+    };
+
+    const startAutoScroll = () => {
+      stopAutoScroll(); // Clear existing
+      autoScrollInterval = setInterval(() => {
+        if (!isAutoScrolling) return;
+        const currentIndex = updateDots();
+        const nextIndex = (currentIndex + 1) % servicesDots.length;
+        scrollToService(nextIndex);
+      }, 5000);
+    };
+
+    const stopAutoScroll = () => {
+      clearInterval(autoScrollInterval);
+    };
+
+    // Pause auto-scroll on interaction
+    servicesGrid.addEventListener('touchstart', () => { 
+      isAutoScrolling = false; 
+      stopAutoScroll(); 
+    }, {passive: true});
 
     // Dot click listener
     servicesDots.forEach(dot => {
       dot.addEventListener('click', (e) => {
+        isAutoScrolling = false;
+        stopAutoScroll();
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = servicesGrid.offsetWidth * 0.85;
-        servicesGrid.scrollTo({
-          left: index * cardWidth,
-          behavior: 'smooth'
-        });
+        scrollToService(index);
       });
     });
+
+    // Initialize auto-scroll
+    if (window.innerWidth <= 768) {
+      startAutoScroll();
+    }
   }
 
   // 5. Testimonial Carousel
