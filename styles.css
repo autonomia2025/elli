@@ -120,6 +120,22 @@ ul { list-style: none; }
 .stat-box h3 { font-family: var(--f-script); font-size: 4rem; color: var(--c-gold); line-height: 1; margin-bottom: 10px; }
 .stat-box p { font-family: var(--f-sans); color: var(--c-green-dark); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
 
+/* MOTHER'S DAY GALLERY */
+.md-gallery { background: var(--c-white); padding: 80px 20px; text-align: center; }
+.md-gallery-container { max-width: 1200px; margin: 0 auto; }
+.md-gallery-tag { font-family: var(--f-sans); font-size: 0.85rem; font-weight: 700; letter-spacing: 3px; color: #F2A7BB; margin-bottom: 40px; text-transform: uppercase; }
+.md-gallery-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
+.md-gallery-item { display: block; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: all 0.3s ease; aspect-ratio: 1/1; }
+.md-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.md-gallery-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
+.md-gallery-item:hover img { transform: scale(1.05); }
+.md-gallery-action { margin-top: 40px; }
+
+@media (min-width: 768px) {
+  .md-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .md-gallery-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+}
+
 /* MOTHER'S DAY PROMO */
 .mothers-day-promo { position: relative; background: linear-gradient(to right, #4A8A3F, #FCE4EC); padding: 100px 20px; text-align: center; overflow: hidden; }
 .md-decor { position: absolute; opacity: 0.6; animation: float 10s infinite ease-in-out; }
