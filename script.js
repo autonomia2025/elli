@@ -62,34 +62,51 @@ export function init() {
   }, { threshold: 0.5 });
   counters.forEach(c => statObserver.observe(c));
 
-  // 4. 24-Hour Countdown Timer
-  const hhElem = document.getElementById('hh');
-  const mmElem = document.getElementById('mm');
-  const ssElem = document.getElementById('ss');
-  
-  if (hhElem && mmElem && ssElem) {
-    // Start of next day
-    const getNextMidnight = () => {
-      const d = new Date();
-      d.setHours(24, 0, 0, 0);
-      return d.getTime();
-    };
-    
-    const updateTime = () => {
-      const now = new Date().getTime();
-      const distance = getNextMidnight() - now;
-      
-      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const s = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      hhElem.innerText = h.toString().padStart(2, '0');
-      mmElem.innerText = m.toString().padStart(2, '0');
-      ssElem.innerText = s.toString().padStart(2, '0');
-    };
-    
-    updateTime();
-    setInterval(updateTime, 1000);
+  // 4. Cyber Countdown Timer
+  const cyberCountdown = document.getElementById('cyberCountdown');
+  if (cyberCountdown) {
+    const ddElem = document.getElementById('cyberDd');
+    const hhElem = document.getElementById('cyberHh');
+    const mmElem = document.getElementById('cyberMm');
+    const ssElem = document.getElementById('cyberSs');
+    const statusElem = document.getElementById('cyberCountdownStatus');
+    const deadlineRaw = cyberCountdown.getAttribute('data-deadline');
+    const deadline = deadlineRaw ? new Date(deadlineRaw).getTime() : null;
+
+    if (ddElem && hhElem && mmElem && ssElem && deadline) {
+      const pad = (value) => String(value).padStart(2, '0');
+
+      const writeCountdown = (distance) => {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+        ddElem.innerText = pad(days);
+        hhElem.innerText = pad(hours);
+        mmElem.innerText = pad(mins);
+        ssElem.innerText = pad(secs);
+      };
+
+      let timer = null;
+
+      const tick = () => {
+        const now = Date.now();
+        const distance = deadline - now;
+
+        if (distance <= 0) {
+          writeCountdown(0);
+          if (statusElem) statusElem.innerText = 'Cyber finalizado';
+          if (timer) clearInterval(timer);
+          return;
+        }
+
+        writeCountdown(distance);
+      };
+
+      tick();
+      timer = setInterval(tick, 1000);
+    }
   }
 
   // 4.5. Services Carousel (Mobile)
