@@ -47,6 +47,7 @@
     <button class="menu-btn" aria-label="Menú">&#9776;</button>
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Galería</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#ubicacion">Ubicación</a></li>
       <li><a href="https://instagram.com/elizabethesteticaybelleza" target="_blank" class="insta-nav-link"><span>Trabajos</span></a></li>
@@ -328,6 +329,93 @@
       <button class="mc-dot" data-index="7" aria-label="Servicio 8"></button>
       <button class="mc-dot" data-index="8" aria-label="Servicio 9"></button>
     </div>
+  </div>
+</section>
+
+<section class="real-gallery" id="galeria">
+  <div class="center scroll-anim">
+    <h2 class="section-title script-title green">Galería de resultados reales</h2>
+    <h3 class="subtitle gold">TRABAJOS, CUIDADO Y AMBIENTE DEL SALÓN</h3>
+  </div>
+
+  <div class="real-gallery-carousel scroll-anim">
+    <button class="gallery-arrow prev" aria-label="Foto anterior">&#10094;</button>
+    <div class="real-gallery-track-wrap">
+      <ul class="real-gallery-track" id="galleryTrack">
+        <li class="real-gallery-slide">
+          <article class="real-gallery-card featured-card">
+            <a href="/galeria/galeria-bozo-antes-despues.jpeg" class="real-gallery-media" data-lightbox data-caption="Depilación de bozo · antes y después">
+              <img src="/galeria/galeria-bozo-antes-despues.jpeg" alt="Antes y después de depilación de bozo en Elizabeth Estética y Belleza">
+            </a>
+            <div class="real-gallery-copy">
+              <p class="real-gallery-tag">Resultado destacado</p>
+              <h4>Depilación de bozo: antes y después</h4>
+            </div>
+          </article>
+        </li>
+
+        <li class="real-gallery-slide">
+          <article class="real-gallery-card">
+            <a href="/galeria/galeria-limpieza-facial-hombre.jpeg" class="real-gallery-media" data-lightbox data-caption="Limpieza facial profesional">
+              <img src="/galeria/galeria-limpieza-facial-hombre.jpeg" alt="Limpieza facial profesional realizada en cabina">
+            </a>
+            <div class="real-gallery-copy">
+              <p class="real-gallery-tag">Limpieza facial</p>
+              <h4>Tu piel, nuestro cuidado</h4>
+            </div>
+          </article>
+        </li>
+
+        <li class="real-gallery-slide">
+          <article class="real-gallery-card">
+            <a href="/galeria/galeria-cuidado-facial-mujer.jpeg" class="real-gallery-media" data-lightbox data-caption="Sesión de cuidado facial">
+              <img src="/galeria/galeria-cuidado-facial-mujer.jpeg" alt="Tratamiento de cuidado facial realizado por especialista">
+            </a>
+            <div class="real-gallery-copy">
+              <p class="real-gallery-tag">Cuidado facial</p>
+              <h4>Atención cercana y profesional</h4>
+            </div>
+          </article>
+        </li>
+
+        <li class="real-gallery-slide">
+          <article class="real-gallery-card">
+            <a href="/galeria/galeria-cabina-01.jpeg" class="real-gallery-media" data-lightbox data-caption="Cabina de atención y equipamiento">
+              <img src="/galeria/galeria-cabina-01.jpeg" alt="Cabina de trabajo y equipamiento de Elizabeth Estética y Belleza">
+            </a>
+            <div class="real-gallery-copy">
+              <p class="real-gallery-tag">Nuestro espacio</p>
+              <h4>Cabina equipada para tu sesión</h4>
+            </div>
+          </article>
+        </li>
+
+        <li class="real-gallery-slide">
+          <article class="real-gallery-card">
+            <a href="/galeria/galeria-cabina-02-noche.jpeg" class="real-gallery-media" data-lightbox data-caption="Ambiente del salón en atención">
+              <img src="/galeria/galeria-cabina-02-noche.jpeg" alt="Ambiente del salón durante una sesión de atención">
+            </a>
+            <div class="real-gallery-copy">
+              <p class="real-gallery-tag">Ambiente</p>
+              <h4>Un espacio íntimo para relajarte</h4>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+    <button class="gallery-arrow next" aria-label="Foto siguiente">&#10095;</button>
+  </div>
+
+  <div class="gallery-dots" id="galleryDots">
+    <button class="gallery-dot active" data-index="0" aria-label="Galería 1"></button>
+    <button class="gallery-dot" data-index="1" aria-label="Galería 2"></button>
+    <button class="gallery-dot" data-index="2" aria-label="Galería 3"></button>
+    <button class="gallery-dot" data-index="3" aria-label="Galería 4"></button>
+    <button class="gallery-dot" data-index="4" aria-label="Galería 5"></button>
+  </div>
+
+  <div class="real-gallery-cta center scroll-anim">
+    <a href="https://wa.me/56933460325?text=Hola%2C%20vi%20la%20galer%C3%ADa%20y%20quiero%20agendar%20una%20cita" target="_blank" class="btn btn-gold btn-large wa-icon-btn">Agendar por WhatsApp</a>
   </div>
 </section>
 
@@ -683,6 +771,12 @@
 <div class="wa-float-container" id="waFloat">
   <span class="wa-tooltip">¡Chatea con nosotras!</span>
   <a href="https://wa.me/56933460325" target="_blank" class="wa-float-btn pulse-wa"></a>
+</div>
+
+<div class="lightbox" id="galleryLightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
+  <img id="lightboxImage" alt="Vista ampliada de galería">
+  <p id="lightboxCaption"></p>
 </div>
 
 <script type="module" src="/script.js"></script>

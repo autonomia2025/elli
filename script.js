@@ -194,7 +194,76 @@ export function init() {
     }
   }
 
-  // 5. Testimonial Carousel
+  // 5. Real Gallery Carousel
+  const galleryTrack = document.getElementById('galleryTrack');
+  const gallerySlides = Array.from(galleryTrack ? galleryTrack.children : []);
+  const galleryNextBtn = document.querySelector('.gallery-arrow.next');
+  const galleryPrevBtn = document.querySelector('.gallery-arrow.prev');
+  const galleryDots = Array.from(document.querySelectorAll('#galleryDots .gallery-dot'));
+  const galleryWrap = document.querySelector('.real-gallery-track-wrap');
+
+  if (galleryTrack && gallerySlides.length > 0) {
+    let currentGallerySlide = 0;
+    let galleryAutoInterval = null;
+    const canAutoRotateGallery = () => window.matchMedia('(min-width: 768px)').matches;
+
+    const moveGalleryTo = (index) => {
+      galleryTrack.style.transform = `translateX(-${index * 100}%)`;
+      currentGallerySlide = index;
+      galleryDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === index);
+      });
+    };
+
+    const galleryNext = () => {
+      const next = currentGallerySlide === gallerySlides.length - 1 ? 0 : currentGallerySlide + 1;
+      moveGalleryTo(next);
+    };
+
+    const galleryPrev = () => {
+      const prev = currentGallerySlide === 0 ? gallerySlides.length - 1 : currentGallerySlide - 1;
+      moveGalleryTo(prev);
+    };
+
+    const stopGalleryAuto = () => {
+      if (galleryAutoInterval) {
+        clearInterval(galleryAutoInterval);
+        galleryAutoInterval = null;
+      }
+    };
+
+    const startGalleryAuto = () => {
+      if (galleryAutoInterval || !canAutoRotateGallery()) return;
+      galleryAutoInterval = setInterval(galleryNext, 3800);
+    };
+
+    moveGalleryTo(0);
+    if (galleryNextBtn) galleryNextBtn.addEventListener('click', galleryNext);
+    if (galleryPrevBtn) galleryPrevBtn.addEventListener('click', galleryPrev);
+
+    galleryDots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const index = Number(e.currentTarget.getAttribute('data-index'));
+        if (!Number.isNaN(index)) {
+          moveGalleryTo(index);
+        }
+      });
+    });
+
+    if (galleryWrap) {
+      galleryWrap.addEventListener('mouseenter', stopGalleryAuto);
+      galleryWrap.addEventListener('mouseleave', startGalleryAuto);
+      galleryWrap.addEventListener('touchstart', stopGalleryAuto, { passive: true });
+    }
+
+    startGalleryAuto();
+    window.addEventListener('resize', () => {
+      if (canAutoRotateGallery()) startGalleryAuto();
+      else stopGalleryAuto();
+    });
+  }
+
+  // 6. Testimonial Carousel
   const track = document.querySelector('.car-track');
   const slides = Array.from(track ? track.children : []);
   const nextBtn = document.querySelector('.car-arrow.next');
@@ -224,7 +293,7 @@ export function init() {
     setInterval(nextFn, 4000);
   }
 
-  // 6. Before & After Slider
+  // 7. Before & After Slider
   const baContainer = document.getElementById('baContainer');
   if (baContainer) {
     const dragText = document.getElementById('baDragText');
@@ -280,7 +349,7 @@ export function init() {
     baObserver.observe(baContainer);
   }
 
-  // 7. FAQ Accordion
+  // 8. FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const btn = item.querySelector('.faq-q');
@@ -302,7 +371,48 @@ export function init() {
     });
   });
 
-  // 8. Floating WhatsApp Button Delay
+  // 9. Gallery Lightbox
+  const lightbox = document.getElementById('galleryLightbox');
+  const lightboxImg = document.getElementById('lightboxImage');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const galleryLinks = document.querySelectorAll('[data-lightbox]');
+
+  if (lightbox && lightboxImg && lightboxCaption && lightboxClose && galleryLinks.length > 0) {
+    const openLightbox = (href, caption) => {
+      lightboxImg.src = href;
+      lightboxCaption.textContent = caption || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.removeAttribute('src');
+      document.body.style.overflow = '';
+    };
+
+    galleryLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        const caption = link.getAttribute('data-caption');
+        if (href) openLightbox(href, caption);
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  }
+
+  // 10. Floating WhatsApp Button Delay
   const waContainer = document.getElementById('waFloat');
   if (waContainer) {
     setTimeout(() => {
