@@ -96,7 +96,41 @@ export function init() {
 
         if (distance <= 0) {
           writeCountdown(0);
-          if (statusElem) statusElem.innerText = 'Cyber finalizado';
+          if (statusElem) statusElem.innerText = 'Promo Día del Padre';
+          document.body.classList.add('cyber-ended');
+
+          // Hero: Cyber badge → Father's Day
+          const heroBadge = document.querySelector('.hero-badge');
+          if (heroBadge) heroBadge.textContent = '\uD83C\uDF81 Promo Día del Padre';
+          const promoText = document.querySelector('.promo-text');
+          if (promoText) promoText.remove();
+
+          // Offer section: retheme to Father's Day
+          const offerTitle = document.querySelector('.offer-container .script-title');
+          if (offerTitle) offerTitle.textContent = 'Día del Padre';
+          const offerDesc = document.querySelector('.offer-container p.white');
+          if (offerDesc) offerDesc.textContent = 'Sorpresa a papá con el regalo que merece.';
+          const countdownBox = document.getElementById('cyberCountdown');
+          if (countdownBox) countdownBox.style.display = 'none';
+          const offerCta = document.querySelector('.offer-container .btn');
+          if (offerCta) {
+            offerCta.innerHTML = 'Agendar por WhatsApp';
+            offerCta.href = 'https://wa.me/56933460325?text=Hola%2C%20quiero%20agendar%20para%20la%20Promo%20del%20D%C3%ADa%20del%20Padre';
+          }
+
+          // Father's Day section: activate
+          const fathersTag = document.querySelector('.fathers-tag');
+          if (fathersTag) fathersTag.textContent = 'PROMO ACTIVA \uD83C\uDF81';
+          const fathersCta = document.querySelector('.fathers-cta .btn');
+          if (fathersCta) fathersCta.textContent = 'Agendar por WhatsApp';
+          document.querySelector('.fathers-day-preview')?.classList.add('fathers-active');
+
+          // Final CTA: retheme
+          const finalP = document.querySelector('.final-content > p');
+          if (finalP) finalP.textContent = 'Sorpresa a papá con el mejor regalo. ¡Agenda hoy!';
+          const finalCtaText = document.querySelector('.md-final-cta-text');
+          if (finalCtaText) finalCtaText.textContent = '\uD83C\uDF81 Promo especial por el Día del Padre';
+
           if (timer) clearInterval(timer);
           return;
         }
