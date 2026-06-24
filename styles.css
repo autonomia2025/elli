@@ -8,6 +8,7 @@
   --c-white: #FFFFFF;
   --c-black: #1A1A1A;
   --c-whatsapp: #25D366;
+  --c-winter: #C4607A;
   --f-script: 'Cormorant Garamond', serif;
   --f-sans: 'Raleway', sans-serif;
   --f-body: system-ui, -apple-system, sans-serif;
@@ -163,7 +164,7 @@ ul { list-style: none; }
 .cyber-new-price { color: var(--c-green-dark); font-family: var(--f-script); font-size: 2.6rem; font-weight: 700; line-height: 1; }
 
 @media (min-width: 992px) {
-  .cyber-offers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cyber-offers { max-width: 560px; margin: 0 auto; }
 }
 
 /* PROCESS SECTION */
@@ -275,21 +276,6 @@ ul { list-style: none; }
 .pulsing-dot { width: 10px; height: 10px; background-color: #ff4757; border-radius: 50%; box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); animation: pulse-red 1.5s infinite; }
 @keyframes pulse-red { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); } }
 .md-offer-note { display: inline-block; background-color: #eef8e8; color: var(--c-green-dark); font-family: var(--f-sans); font-weight: 700; margin-top: 25px; font-size: 0.95rem; padding: 12px 25px; border-radius: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); border: 1px solid rgba(104, 180, 91, 0.35); }
-
-/* FATHER'S DAY PREVIEW */
-.fathers-day-preview { background: var(--c-white); padding: 80px 20px; }
-.fathers-tag { display: inline-block; font-family: var(--f-sans); font-size: 0.78rem; font-weight: 700; letter-spacing: 3px; color: var(--c-gold); text-transform: uppercase; margin-bottom: 14px; padding: 6px 18px; border: 1px solid var(--c-gold); border-radius: 30px; }
-.fathers-grid { max-width: 760px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.fathers-card { display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; aspect-ratio: 9/16; background: #f7f7f7; }
-.fathers-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
-.fathers-card img { width: 100%; height: 100%; object-fit: contain; display: block; background: #f7f7f7; transition: transform 0.4s ease; }
-.fathers-card:hover img { transform: scale(1.04); }
-.fathers-cta { margin-top: 36px; }
-
-@media (max-width: 768px) {
-  .fathers-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .fathers-day-preview { padding: 60px 20px; }
-}
 
 /* WHY US */
 .why-us { background: var(--c-cream); padding: 100px 20px; text-align: center; }
@@ -473,242 +459,49 @@ footer { background: var(--c-black); color: rgba(255,255,255,0.6); padding: 60px
   .real-gallery-copy h4 { font-size: 1rem; }
 }
 
-/* SPECIALIST SECTION (DHAMELYS) */
-.specialist-section { 
-  background-color: #f3eee7;
-  background-image: radial-gradient(rgba(184, 154, 90, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  padding: 100px 20px; 
-  position: relative;
-  overflow: hidden;
-}
-.specialist-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(to right, transparent, var(--c-gold), transparent);
-}
-.specialist-container { max-width: 900px; margin: 0 auto; text-align: center; }
-.specialist-tag { 
-  display: block; 
-  font-family: var(--f-sans); 
-  font-weight: 700; 
-  letter-spacing: 4px; 
-  font-size: 0.8rem; 
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  color: var(--c-gold);
-}
-.specialist-subtitle { 
-  font-family: var(--f-sans); 
-  font-weight: 600; 
-  color: #666; 
-  margin-top: -5px;
-  margin-bottom: 40px;
-}
-.specialist-grid { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 50px; 
-  margin-bottom: 50px;
-  text-align: left;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 40px;
+
+/* WINTER PROMO SHOWCASE */
+.winter-promo-showcase { display: flex; justify-content: center; padding: 20px 0 40px; }
+.winter-promo-card {
+  background: linear-gradient(145deg, #fff8f5, #fdf0f3);
+  border: 2px solid rgba(196, 96, 122, 0.2);
   border-radius: 30px;
-  border: 1px solid rgba(184, 154, 90, 0.2);
-}
-.specialist-intro {
-  flex: 0 0 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  border-right: 1px solid rgba(184, 154, 90, 0.3);
-  padding-right: 40px;
-}
-.specialist-monogram {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: var(--c-gold);
-  color: var(--c-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--f-script);
-  font-size: 4rem;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 20px rgba(184, 154, 90, 0.3);
-}
-.specialist-intro h3 {
-  font-family: var(--f-script);
-  font-size: 2.2rem;
-  color: var(--c-green-dark);
-  margin-bottom: 15px;
-  line-height: 1;
-}
-.specialist-intro p {
-  font-family: var(--f-sans);
-  font-size: 0.95rem;
-  color: var(--c-black);
-  line-height: 1.6;
-}
-
-.compact-services { 
-  list-style: none; 
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 15px 30px; 
-}
-.compact-services li { 
-  font-size: 0.95rem; 
-  color: var(--c-black); 
-  display: flex; 
-  align-items: center; 
-  gap: 10px; 
-  font-family: var(--f-sans);
-  font-weight: 500;
-}
-.btn-dhamelys { 
-  background: var(--c-green-dark); 
-  color: var(--c-white); 
-  border: 2px solid transparent;
-}
-.btn-dhamelys:hover { 
-  background: transparent; 
-  color: var(--c-green-dark); 
-  border-color: var(--c-green-dark); 
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(63, 122, 54, 0.2);
-}
-.disclaimer { 
-  margin-top: 20px; 
-  font-size: 0.8rem; 
-  color: #888; 
-  font-family: var(--f-sans);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 768px) {
-  .specialist-grid { flex-direction: column; gap: 30px; padding: 30px 20px; text-align: center; }
-  .specialist-intro { 
-    border-right: none; 
-    padding-right: 0; 
-    border-bottom: 1px solid rgba(184, 154, 90, 0.3); 
-    padding-bottom: 30px; 
-    flex: auto;
-  }
-  .compact-services { grid-template-columns: 1fr; justify-items: center; }
-  .specialist-section { padding: 60px 20px; }
-}
-
-/* DHAMELYS GALLERY */
-.specialist-gallery {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  overflow: hidden;
-  padding: 40px 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.gallery-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-infinite 40s linear infinite;
-}
-.gallery-track:hover {
-  animation-play-state: paused;
-}
-.gallery-item {
-  width: 260px;
-  height: 320px;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  flex-shrink: 0;
-  margin-right: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  cursor: pointer;
-}
-.gallery-item img {
+  padding: 40px 50px;
+  max-width: 480px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.gallery-item:hover img {
-  transform: scale(1.15);
-}
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(63, 122, 54, 0.85);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: all 0.4s ease;
-  padding: 30px;
   text-align: center;
-  backdrop-filter: blur(2px);
+  box-shadow: 0 20px 50px rgba(196, 96, 122, 0.12), 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
 }
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-.overlay-emoji {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
-  transform: translateY(20px);
-  transition: transform 0.4s ease;
-}
-.gallery-item:hover .overlay-emoji {
-  transform: translateY(0);
-}
-.gallery-overlay h4 {
-  color: var(--c-white);
-  font-family: var(--f-script);
-  font-size: 1.8rem;
-  line-height: 1.2;
-  transform: translateY(20px);
-  transition: transform 0.4s ease 0.1s;
-}
-.gallery-item:hover .gallery-overlay h4 {
-  transform: translateY(0);
-}
+.winter-snowflakes { font-size: 1.5rem; letter-spacing: 10px; margin-bottom: 15px; opacity: 0.7; }
+.winter-logo-badge { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
+.winter-brand { font-family: var(--f-script); font-size: 2.2rem; font-style: italic; color: var(--c-green-dark); line-height: 1; }
+.winter-brand-sub { font-family: var(--f-sans); font-size: 0.75rem; letter-spacing: 3px; color: #888; font-weight: 600; text-transform: uppercase; margin-top: 2px; }
+.winter-promo-title { font-family: var(--f-sans); font-size: 2rem; font-weight: 800; color: var(--c-green-dark); text-transform: uppercase; line-height: 1.1; margin-bottom: 25px; }
+.winter-promo-highlight { color: var(--c-winter); font-size: 2.8rem; }
+.winter-services-list { background: rgba(255,255,255,0.8); border: 1px solid rgba(196,96,122,0.15); border-radius: 16px; padding: 18px 24px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.winter-service-item { display: flex; align-items: center; gap: 12px; font-family: var(--f-sans); font-size: 1rem; color: var(--c-black); font-weight: 500; border-bottom: 1px dashed rgba(196,96,122,0.2); padding-bottom: 10px; }
+.winter-service-item:last-child { border-bottom: none; padding-bottom: 0; }
+.winter-service-icon { font-size: 1.3rem; }
+.winter-gift-badge { display: inline-block; background: rgba(255,182,193,0.2); border: 1.5px dashed var(--c-winter); border-radius: 50px; padding: 10px 22px; font-family: var(--f-sans); font-size: 0.95rem; color: var(--c-winter); margin-bottom: 20px; line-height: 1.4; }
+.winter-price-block { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 15px; }
+.winter-todo-por { font-family: var(--f-sans); font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; color: #888; text-transform: uppercase; }
+.winter-price-big { font-family: var(--f-script); font-size: 4rem; color: var(--c-winter); font-weight: 700; line-height: 1; }
+.winter-tagline { font-family: var(--f-script); font-size: 1.3rem; color: var(--c-green-dark); opacity: 0.85; }
 
-@keyframes scroll-infinite {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+/* WINTER PROMO INCLUDED LIST (in cyber-promo section) */
+.winter-included-list { list-style: none; text-align: left; margin: 15px 0; display: flex; flex-direction: column; gap: 10px; }
+.winter-included-list li { display: flex; align-items: center; gap: 10px; font-family: var(--f-sans); font-size: 1rem; color: var(--c-green-dark); font-weight: 600; padding-bottom: 8px; border-bottom: 1px dashed rgba(63,122,54,0.2); }
+.winter-included-list li:last-child { border-bottom: none; }
+.winter-gift-tag { display: inline-block; background: #fff0f3; border: 1.5px dashed var(--c-winter); color: var(--c-winter); border-radius: 30px; padding: 8px 20px; font-family: var(--f-sans); font-weight: 700; font-size: 0.9rem; margin: 10px 0 15px; }
+
+/* WINTER PRICE STAT (stats section) */
+.winter-price-stat { font-family: var(--f-script); font-size: 2.8rem; color: var(--c-gold); line-height: 1; margin-bottom: 10px; }
 
 @media (max-width: 768px) {
-  .gallery-item {
-    width: 220px;
-    height: 280px;
-    margin-right: 15px;
-  }
+  .winter-promo-card { padding: 30px 25px; }
+  .winter-promo-title { font-size: 1.6rem; }
+  .winter-promo-highlight { font-size: 2.2rem; }
+  .winter-price-big { font-size: 3rem; }
 }
-
-/* CYBER EXPIRED — hides all campaign elements after deadline */
-.cyber-ended .promo-banner,
-.cyber-ended #galeria-cyber,
-.cyber-ended #promo-cyber,
-.cyber-ended .urgency-text,
-.cyber-ended .md-offer-note,
-.cyber-ended .md-footer-tag,
-.cyber-ended .md-final-cta-text { display: none !important; }
-
-/* Father's Day active state — takes over after Cyber ends */
-.fathers-active { background: var(--c-cream) !important; padding: 100px 20px !important; }
-.fathers-active .fathers-tag { background: var(--c-green); color: var(--c-white); border-color: var(--c-green); }
-.fathers-active .fathers-grid { max-width: 860px; }
-.fathers-active .fathers-card { box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
-.cyber-ended .offer { margin-bottom: 0; border-radius: 0; }
