@@ -48,6 +48,7 @@
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#galeria">Galería</a></li>
+      <li><a href="#videos">Videos</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#ubicacion">Ubicación</a></li>
       <li><a href="https://instagram.com/elizabethesteticaybelleza" target="_blank" class="insta-nav-link"><span>Trabajos</span></a></li>
@@ -426,6 +427,74 @@
   </div>
 </section>
 
+<section class="video-gallery" id="videos">
+  <div class="center scroll-anim">
+    <h2 class="section-title script-title green">Tratamientos en acción</h2>
+    <h3 class="subtitle gold">MIRA CÓMO TRABAJAMOS</h3>
+  </div>
+
+  <div class="video-scroll-row scroll-anim">
+    <article class="video-card">
+      <a href="/videos/video-facial-mascarilla-carbon.mp4" class="video-media" data-lightbox-video data-caption="Limpieza facial con mascarilla de carbón">
+        <video src="/videos/video-facial-mascarilla-carbon.mp4#t=0.3" poster="/videos/posters/video-facial-mascarilla-carbon.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="video-play-badge">&#9654;</span>
+      </a>
+      <div class="real-gallery-copy">
+        <p class="real-gallery-tag">Facial</p>
+        <h4>Mascarilla de carbón</h4>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <a href="/videos/video-maderoterapia-abdomen-01.mp4" class="video-media" data-lightbox-video data-caption="Maderoterapia: modelado de abdomen">
+        <video src="/videos/video-maderoterapia-abdomen-01.mp4#t=0.3" poster="/videos/posters/video-maderoterapia-abdomen-01.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="video-play-badge">&#9654;</span>
+      </a>
+      <div class="real-gallery-copy">
+        <p class="real-gallery-tag">Maderoterapia</p>
+        <h4>Modelado de abdomen</h4>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <a href="/videos/video-facial-tratamiento-led.mp4" class="video-media" data-lightbox-video data-caption="Tratamiento facial con radiofrecuencia">
+        <video src="/videos/video-facial-tratamiento-led.mp4#t=0.3" poster="/videos/posters/video-facial-tratamiento-led.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="video-play-badge">&#9654;</span>
+      </a>
+      <div class="real-gallery-copy">
+        <p class="real-gallery-tag">Facial</p>
+        <h4>Tratamiento con radiofrecuencia</h4>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <a href="/videos/video-maderoterapia-abdomen-02.mp4" class="video-media" data-lightbox-video data-caption="Maderoterapia: masaje reductor de abdomen">
+        <video src="/videos/video-maderoterapia-abdomen-02.mp4#t=0.3" poster="/videos/posters/video-maderoterapia-abdomen-02.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="video-play-badge">&#9654;</span>
+      </a>
+      <div class="real-gallery-copy">
+        <p class="real-gallery-tag">Maderoterapia</p>
+        <h4>Masaje reductor</h4>
+      </div>
+    </article>
+
+    <article class="video-card">
+      <a href="/videos/video-maderoterapia-abdomen-03.mp4" class="video-media" data-lightbox-video data-caption="Maderoterapia: técnica en abdomen">
+        <video src="/videos/video-maderoterapia-abdomen-03.mp4#t=0.3" poster="/videos/posters/video-maderoterapia-abdomen-03.jpg" muted loop playsinline preload="metadata"></video>
+        <span class="video-play-badge">&#9654;</span>
+      </a>
+      <div class="real-gallery-copy">
+        <p class="real-gallery-tag">Maderoterapia</p>
+        <h4>Técnica en abdomen</h4>
+      </div>
+    </article>
+  </div>
+
+  <div class="real-gallery-cta center scroll-anim">
+    <a href="https://wa.me/56933460325?text=Hola%2C%20vi%20los%20videos%20y%20quiero%20agendar%20una%20cita" target="_blank" class="btn btn-gold btn-large wa-icon-btn">Agendar por WhatsApp</a>
+  </div>
+</section>
+
 <section class="ba-section" id="resultados">
   <div class="ba-header center scroll-anim">
     <h2 class="section-title script-title green">Los resultados hablan</h2>
@@ -626,6 +695,7 @@
 <div class="lightbox" id="galleryLightbox" aria-hidden="true">
   <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
   <img id="lightboxImage" alt="Vista ampliada de galería">
+  <video id="lightboxVideo" controls playsinline></video>
   <p id="lightboxCaption"></p>
 </div>
 

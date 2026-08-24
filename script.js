@@ -324,16 +324,31 @@ export function init() {
     });
   });
 
-  // 9. Gallery Lightbox
+  // 9. Gallery Lightbox (images + videos)
   const lightbox = document.getElementById('galleryLightbox');
   const lightboxImg = document.getElementById('lightboxImage');
+  const lightboxVideo = document.getElementById('lightboxVideo');
   const lightboxCaption = document.getElementById('lightboxCaption');
   const lightboxClose = document.getElementById('lightboxClose');
-  const galleryLinks = document.querySelectorAll('[data-lightbox]');
+  const galleryLinks = document.querySelectorAll('[data-lightbox], [data-lightbox-video]');
 
-  if (lightbox && lightboxImg && lightboxCaption && lightboxClose && galleryLinks.length > 0) {
-    const openLightbox = (href, caption) => {
-      lightboxImg.src = href;
+  if (lightbox && lightboxImg && lightboxVideo && lightboxCaption && lightboxClose && galleryLinks.length > 0) {
+    const openLightbox = (href, caption, isVideo) => {
+      if (isVideo) {
+        lightboxVideo.src = href;
+        lightboxVideo.classList.add('open');
+        lightboxVideo.muted = false;
+        lightboxVideo.play().catch(() => {});
+        lightboxImg.classList.remove('open');
+        lightboxImg.removeAttribute('src');
+      } else {
+        lightboxImg.src = href;
+        lightboxImg.classList.add('open');
+        lightboxVideo.classList.remove('open');
+        lightboxVideo.pause();
+        lightboxVideo.removeAttribute('src');
+        lightboxVideo.load();
+      }
       lightboxCaption.textContent = caption || '';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
@@ -343,7 +358,12 @@ export function init() {
     const closeLightbox = () => {
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.classList.remove('open');
       lightboxImg.removeAttribute('src');
+      lightboxVideo.classList.remove('open');
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
       document.body.style.overflow = '';
     };
 
@@ -352,7 +372,8 @@ export function init() {
         e.preventDefault();
         const href = link.getAttribute('href');
         const caption = link.getAttribute('data-caption');
-        if (href) openLightbox(href, caption);
+        const isVideo = link.hasAttribute('data-lightbox-video');
+        if (href) openLightbox(href, caption, isVideo);
       });
     });
 
@@ -363,6 +384,22 @@ export function init() {
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
     });
+  }
+
+  // 9b. Video Gallery — muted autoplay preview while in view
+  const previewVideos = Array.from(document.querySelectorAll('.video-card video'));
+  if (previewVideos.length > 0 && 'IntersectionObserver' in window) {
+    const previewObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.6 });
+    previewVideos.forEach((video) => previewObserver.observe(video));
   }
 
   // 10. Floating WhatsApp Button Delay
